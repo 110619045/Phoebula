@@ -1,0 +1,375 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Physical Computing</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>Editorial</strong> by Phoebe</a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>Physical Computing</h1>
+                    </header>
+
+                    <!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span> -->
+                    <a href="https://itp.nyu.edu/physcomp/syllabus-fall-2026/">Course website</a>
+                    <p>
+
+                    </p>
+
+                    <hr class="major" />
+                    <!-- WEEK 1 -->
+                    <h2>WEEK 1 - </h2>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="https://itp.nyu.edu/physcomp/week-to-week-activity/#Week_1">Week1</a><br>
+                            <a hred="https://itp.nyu.edu/physcomp/resources/parts-and-tools-guide/">Parts And Tools
+                                Guide</a><br>
+                            <a href="https://vimeo.com/86743824">Video: Basic Tools</a><br>
+                            <a href="https://itp.nyu.edu/physcomp/lessons/electronics/electricity-the-basics/">Electricity:
+                                the Basics</a><br>
+                            <a href="https://itp.nyu.edu/physcomp/labs/components/">Lab: Components</a><span> , </span>
+                            <a href="https://itp.nyu.edu/physcomp/labs/breadboard/">Lab: Setting Up A Breadboard</a><span> , </span>
+                            <a href="https://itp.nyu.edu/physcomp/labs/electronics/">Lab: Electronics</a><span> , </span>
+                            <a href="https://itp.nyu.edu/physcomp/labs/switches/">Lab: Switches and Pushbuttons</a>
+
+                            <p>↖ Learning resources ↗</p>
+                        </div>
+                        <div class="col-6">
+                            <a href="https://octopart.com/zh/bom-tool/80MI6EEA">ITP Tool List</a><br>
+                            <a href="https://octopart.com/zh/bom-tool/tIjtclp7">ITP Pcomp Basic Parts</a><br>
+                            <span>Advanced lists -
+                                <a href="https://octopart.com/zh/bom-tool/YNqw8o58">ITP Pcomp Sensor List</a><span> , </span>
+                                <a href="https://octopart.com/zh/bom-tool/PGCWGMWc">ITP Pcomp Motor List </a><span> , </span>
+                                <a href="https://octopart.com/zh/bom-tool/bFVvpfAI">ITP Pcomp Lighting List</a>
+                            </span><br>
+                            <a href="https://itp.nyu.edu/physcomp/resources/picking-a-microcontroller/">Picking a
+                                Microcontroller</a><br>
+                            <a
+                                href="https://docs.google.com/document/d/1p2TX8M-nYUHfQVFdd-z7KpmWQIRLgwWrKfNoUNWejUo/edit?tab=t.0">Feedback
+                                Guides</a>
+
+                            <p>↖ It may be useful in the future ↗</p>
+                        </div>
+                    </div>
+
+                    <!-- Parts -->
+                    <br>
+                    <h3 id="content">Parts</h3>
+                    <div class="row aln-center">
+                        <div class="col-8"><span class="image fit"><img src="/images/PCom/week1/parts.png"
+                                    alt="NANO 33 IoT" /></span>
+                        </div>
+                    </div>
+                    <p class="row aln-center"><sup>Potentiometers - 電位器 | Pushbuttons | Phototransistors - 光電晶體管 |
+                            Resistors - 電阻器 | Capacitors - 電容器 |
+                            Voltage regulators - 電壓穩定器
+                        </sup></p>
+
+                    <br>
+                    <h4>Microcontroller</h4>
+                    <p>
+                        This time, we are using the Arduino Nano 33 IoT. I have used the Arduino Uno and Leonardo
+                        before, but I was always a little confused about when to use different boards.
+                    </p>
+
+                    <div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-4"><span class="image fit"><img src="/images/PCom/week1/NANO33.png"
+                                        alt="NANO 33 IoT" /></span>
+                            </div>
+                            <div class="col-4"><span class="image fit"><img src="/images/PCom/week1/UNO.png"
+                                        alt="UNO" /></span>
+                            </div>
+                            <div class="col-4"><span class="image fit"><img src="/images/PCom/week1/LEONARDO.png"
+                                        alt="LEONARDO" /></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>
+                        Now I have a better understanding of what to consider when choosing a board:
+                    </p>
+                    <ol>
+                        <li><strong>Inputs and Outputs</strong><br>
+                            How many input and output pins do I need? What kinds of sensors, buttons, LEDs, motors, or
+                            other components will I connect?
+                        </li>
+                        <li><strong>Special Features</strong><br>
+                            What features does my project need? For example, if I need Wi-Fi or Bluetooth, I should
+                            choose a board that supports wireless communication. If I want the Arduino to act like a
+                            keyboard or mouse, a board like the Leonardo would be a good choice.
+                        </li>
+                        <li><strong>Size</strong><br>
+                            During the prototyping stage, an Uno can be easier to work with because it is larger and
+                            makes wiring and debugging clearer. However, if I need to fit the board inside a small
+                            physical object, I might choose a smaller board such as a Nano or Micro.
+                        </li>
+                        <li><strong>Voltage</strong><br>
+                            Does the board use 5V or 3.3V logic? I also need to check the voltage requirements of the
+                            sensors and modules I am using to make sure they are compatible.
+                        </li>
+                        <li><strong>Processing Power and Memory</strong><br>
+                            How much CPU performance, RAM, and Flash memory does the project need? For simple sensor
+                            input and output, this may not matter much, but it becomes more important for more complex
+                            projects.
+                        </li>
+                    </ol>
+
+                    <br>
+                    <h4>Board</h4>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    <span class="image fit">
+                                        <img src="/images/PCom/week1/PrintedCircuitBoard.jpeg"
+                                            alt="Printed Circuit Board" /></span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="image fit">
+                                        <img src="/images/PCom/week1/perma-protoBoards.jpeg"
+                                            alt="Perma-proto Boards" /></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><strong>Printed circuit board (PCB) :</strong>
+                            Uses copper traces instead of lots of jumper wires.</li>
+                        <li><strong>Perma-proto boards :</strong>
+                            Works like a breadboard, but you need to solder the components in
+                            place.
+                        </li>
+                    </ul>
+
+                    <br>
+                    <h4>Hand Tools</h4>
+                    <ul>
+                        <li><strong>Wire Strippers, 20-30AWG </strong>
+                            Strip the insulation from wires. The most common wire you'll use is 22AWG thickness
+                        </li>
+                        <li><strong>Needle Nose Pliers: </strong>
+                            Use them a lot for pulling wires, bending wires, and picking up components.
+                        </li>
+                        <li><strong>Diagonal cutters: </strong>
+                            These are used for cutting wires and small bits of metal.
+                        </li>
+                        <li><strong>Mini Screwdriver: </strong>
+                            Get a mini screwdriver that has both flat and Philips heads. Many devices have small screws
+                            that you need to take out.
+                        </li>
+                        <li><strong>Hobby knife: </strong>
+                            They are effective for cutting cardboard, mat board, and other soft materials.
+                        </li>
+                    </ul>
+
+                    <!-- Electricity: the Basics -->
+                    <br>
+                    <h3>Electricity: the Basics </h3>
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li>
+                            Electricity - the flow of electrical energy through conductive materials.
+                        </li>
+                        <li>
+                            Electrical Circuit - power source + convert the electrical energy into other forms of
+                            energy.
+                        </li>
+                        <li><strong>Sensors - Other froms of energy -> Electrical energy</strong><br>
+                            components that covert other forms of energy into electrical energy. (switches, knobs,
+                            light, motion sensors)
+                        </li>
+                        <li><strong>Actuators - Electrical energy -> Other froms of energy</strong><br>
+                            components that convert electrical energy into other forms. (Light bulbs, motors, LEDs,
+                            heaters)
+                        </li>
+                        <li>
+                            Electronic - reading changes in electrical properties as information. (EG: Microphone -
+                            sound pressure waves in the air -> electrical voltage)
+                        </li>
+                        <li>
+                            Transduction - change one energy into anthor
+                        </li>
+                        <li><strong>Transducers</strong>
+                            - devices that do it ⤴
+                        </li>
+                    </ul>
+
+                    <br>
+                    <h4>Relationships</h4>
+                    <ul>
+                        <li>
+                            Voltage (Volts) - a measure of the difference in electrical potential energy between two
+                            points in a
+                            circuit. (the potential between two point of move charges like electrons)
+                        </li>
+                        <li>
+                            Current (Amperes, or Amps) - a measure of the magnitude of the flow of electrons through a
+                            particular point in
+                            a circuit. (movement of those charges)
+                        </li>
+                        <li>
+                            Resistance (Ohms) - a measure of a material's ability to oppose the flow of electricity.
+                            (resistance to that movement)
+                        </li>
+                        <li>
+                            <strong>V = I * R (Volts = Amps * Ohms) -> For a given voltage, more resistance means less
+                                current</strong>
+                        </li>
+                        <li>
+                            Electrical power (watts)
+                        </li>
+                        <li>
+                            <strong>P = V * I (Watts = Volts * Amps)</strong>
+                        </li>
+                    </ul>
+
+                    <p>Rules that explain how electrical energy moves through these circuits:</p>
+                    <ul>
+                        <li>Current tends to follow the path of least resistance to the ground.</li>
+                        <li>In any given circuit, the total voltage around the path of the circuit is zero.</li>
+                        <li>The amount of current going into any point in a circuit is the same as the amount coming out
+                            of that point.</li>
+                    </ul>
+
+                    <br>
+                    <h3>Lab - Setting Up A Breadboard</h3>
+                    <h4>Powering A Breadboard Circuit From A Microcontroller Via A DC Power Supply</h4>
+                    <p>When you're not powering it via its USB connector, the Nano 33 IoT and the Nano Every can be
+                        powered through the Vin pin (pin 15, bottom left side of the module) by a voltage range from 7 –
+                        21 volts.<br>
+                        When you power the Nano this way, you get 3.3V from the 3V3 pin (pin 2) just as if you were
+                        powering from USB.<br>
+                        If you have components that need a higher voltage, you can supply them
+                        directly from your power supply via the Vin pin.
+                    </p>
+
+                    <h3>Lab - Measuring Component</h3>
+                    <p>If your meter is not an auto-ranging meter, you want the meter set to the approximate range, and
+                        slightly higher than, of the component's resistance.
+                        (EX: measure a 10-Kilohm resistance - you'd choose 20K, bc 10K and 20K are in the same order of
+                        magnitude / For a 50K resistance, or anything over 20K, you'd have to step up to 200K)<br>
+                        If you <b>don't know the component's resistance</b>, start with the meter set to a high reading,
+                        like
+                        2M (2 Megohms). If you get a reading of zero, turn the meter one step lower, and keep doing so
+                        until you get a good reading.<br>
+                        A reading of 1 on the left side of the meter, or of 0L, indicates
+                        you're set to too low a range.
+                    </p>
+
+                    <h4>Resistance and Diodes</h4>
+                    <p>If you measure the resistance of a diode (such as the LED shown in Figure 20), you may see a
+                        number flash briefly on the meter, then disappear.<br>
+                        This is because <b>diodes ideally have little or no resistance</b> once voltage is flowing
+                        through
+                        them, but have what's called a <strong>forward bias</strong> , which
+                        is a minimum voltage needed to get current flowing. Before you reach the forward bias voltage,
+                        the diode's resistance is ideally infinite. After you reach it, the resistance is ideally
+                        zero.<br>
+                        There are no ideals in electronics, however, which is why you see a resistance value flash
+                        briefly as the meter meets the diode's forward bias. Most meters have a diode check setting,
+                        marked with a diode symbol, that will allow you to check the forward bias of the diode.</p>
+
+                    <h4>Measuring Voltage</h4>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <p>
+                                Voltage is a measure of the difference in <strong>electrical potential energy between
+                                    two points
+                                    in a
+                                    circuit</strong>. It's always measured between two points in a circuit. Measuring
+                                the
+                                voltage between the
+                                two sides of a component like an LED tells you how much voltage that component uses.
+                                When you're
+                                measuring voltage between one side of a component and another, for example, it's called
+                                measuring the voltage drop “across” the component.
+                            </p>
+                            <p>A typical LED operates at a voltage of <b>2.0-2.6 volts (V)</b> and consumes
+                                approximately 20
+                                milliamps (mA). Different color LEDs are made with different elements, and have slightly
+                                different voltage drops. </p>
+                            <p>The remaining energy is lost as heat generated from the components.</p>
+
+                            <p>
+                                To measure the amperage through a given component, you need to place your meter in
+                                series with the component. When two components are in series, the amperage flowing through 
+                                both of them is the same. To measure the amperage through any one of the LEDs in this circuit, you'll
+                                need to <b>disconnect one of the LED's ends from the circuit (disconnect power first!)</b> 
+                                and use the meter to complete the circuit
+                            </p>
+                        </div>
+                        <img class="col-4"
+                            src="https://itp.nyu.edu/physcomp/wp-content/uploads/measuring_amps_bb-1.png">
+                    </div>
+
+                    <br>
+                    <h3>Lab: Switches and Pushbuttons</h3>
+                    <div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+
+    <script>
+        fetch('components/sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+
+                const script = document.createElement('script');
+                script.src = 'assets/js/main.js';
+                document.body.appendChild(script);
+            });
+    </script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>
