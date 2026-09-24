@@ -1,0 +1,19 @@
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(blueLEDPin, HIGH);
+  digitalWrite(whiteLEDPin, HIGH);
+  delay(delayAmmount);
+
+  digitalWrite(whiteLEDPin, LOW);
+  delay(delayAmmount);
+  digitalWrite(whiteLEDPin, HIGH);
+  delay(delayAmmount);
+  digitalWrite(whiteLEDPin, LOW);
+  delay(delayAmmount);
+  digitalWrite(whiteLEDPin, HIGH);
+  delay(delayAmmount);
+
+  digitalWrite(whiteLEDPin, LOW);
+  digitalWrite(blueLEDPin, LOW);
+  delay(delayAmmount);
+}
