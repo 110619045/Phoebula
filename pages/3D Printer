@@ -1,0 +1,21 @@
+https://makerworld.com/en
+
+https://cloud.3dprinteros.com/#/
+3D Printer OS -> SSO登入NYU ITP
+
+Layer thickness (mm) -> 越小越滑順 （有曲線建議小0.1，其他0.2也可）
+Wall Loops -> 要很堅固的話，建議4，其他的話2其實也可以了
+Infill Density (%) -> 高，內心更多，但久。10-20平常用就夠了
+Infill Pattern -> 常用gyroid，grid不常用喔～
+
+Brim Type -> help model state in place
+Support -> remove it after work, flat - 歸建normal
+
+不要用pla要用其他耗材的話要問EN
+最長不能超過8號時，超過要變小塊自己組裝
+24-25一周最長能用
+只有綠色的才能用
+藍的在用中
+紅色的是完成了，但東西還沒拿出來
+
+bambu好，用這個好，因為時間比較快；另一台會是bambu三被
