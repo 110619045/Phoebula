@@ -6,11 +6,7 @@ function normalize(path) {
     return path.endsWith('/') ? path + 'index.html' : path;
 }
 
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    fetch(basePath + 'components/sidebar.html')
+fetch(basePath + 'components/sidebar.html')
     .then(response => {
         if (!response.ok) throw new Error(response.status + ' ' + response.url);
         return response.text();
@@ -50,3 +46,5 @@ function normalize(path) {
         document.body.appendChild(script);
     })
     .catch(err => console.error('Sidebar 載入失敗：', err));
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
