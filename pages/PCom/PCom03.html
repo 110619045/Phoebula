@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Physical Computing</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="../../ICM.html" class="logo">
+                        <span class="back-link icon solid fa-arrow-left"> </span>
+                    </a>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>WEEK 3</h1>
+                    </header>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="https://itp.nyu.edu/physcomp/week-to-week-activity/#Week_3">Week3</a><br>
+                            <a
+                                href="https://itp.nyu.edu/physcomp/labs/labs-arduino-digital-and-analog/analog-in-with-an-arduino/#Finding_Your_Sensor_Range">Finding_Your_Sensor_Range</a><br>
+                            <a href="https://vimeo.com/372103855#t=9m21s">Analog Input 2</a><br>
+                            <a
+                                href="https://itp.nyu.edu/physcomp/labs/labs-arduino-digital-and-analog/tone-output-using-an-arduino/">Tone</a>
+                            <p>↖ Learning resources ↗</p>
+                        </div>
+                        <div class="col-6">
+
+                            <p>↖ It may be useful in the future ↗</p>
+                        </div>
+                    </div>
+
+                    <!-- Parts -->
+                    <br>
+                    <h2 id="content">Lab: Tone Output Using An Arduino</h2>
+                    <p>
+                        Use <code>Serial.println(sensorValue);</code> and the Serial Plotter to find your sensor's
+                        range.
+                    <ul>
+                        <li>
+                            constrain() - limits a value to a specific range.
+                        </li>
+                        <li>
+                            map() - converts a value from one range to another.
+                        </li>
+                    </ul>
+
+                    frequency = constrain(frequency, 10, 1000); // do this after the map() command
+
+                    </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zvGByyJLpqQ?si=L5mmdwxiIbMy0CVT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    
+                    <pre><code>
+    void setup() {
+    Serial.begin(9600);       // initialize serial communications
+    }
+    
+    void loop() {
+    int analogValue = analogRead(A0); // read the analog input
+    Serial.println(analogValue);      // print it
+
+    float frequency = map(analogValue, -200, 1200, 100, 1000);
+    tone(8, frequency, 10);
+
+    delay(1000);
+    }
+                    </code></pre>
+
+                    <br>
+
+                    <h3>Without the tone()</h3>
+                    <p>By repeatedly switching the speaker pin from HIGH -> LOW -> HIGH -> LOW, sound can be produced.
+                    </p>
+                    <div class="row">
+                        <pre class="col-6"><code>
+void setup() {
+  Serial.begin(9600);
+  pinMode(8, OUTPUT);
+}
+
+void loop() {
+  int analogValue = analogRead(A0);
+  Serial.println(analogValue);
+
+  float frequency = map(analogValue, -200, 1200, 100, 1000);
+  frequency = constrain(frequency, 100, 1000);
+
+  makeTone(frequency);
+}
+
+void makeTone(float frequency) {
+  int period = (1 / frequency) * 1000000;
+
+  digitalWrite(8, HIGH);
+  delayMicroseconds(period / 2);
+
+  digitalWrite(8, LOW);
+  delayMicroseconds(period / 2);
+}
+                    </code></pre>
+                        <div class="col-5">
+                            <iframe width="452" height="804" src="https://www.youtube.com/embed/gVrFIFti0T4"
+                                title="without the tone()" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <h3>Do Re Mi Fa Sol La Si</h3>
+                    <pre><code>
+void setup() {
+  pinMode(8, OUTPUT);
+}
+
+void loop() {
+  tone(8, 262, 500);  // Do
+  delay(600);
+
+  tone(8, 294, 500);  // Re
+  delay(600);
+
+  tone(8, 330, 500);  // Mi
+  delay(600);
+
+  tone(8, 349, 500);  // Fa
+  delay(600);
+
+  tone(8, 392, 500);  // Sol
+  delay(600);
+
+  tone(8, 440, 500);  // La
+  delay(600);
+
+  tone(8, 494, 500);  // Si
+  delay(600);
+
+  tone(8, 523, 500);  // Do
+  delay(1000);
+}
+                    </code></pre>
+
+                </section>
+
+            </div>
+        </div>
+
+
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+
+    <script src="../../assets/js/sidebar.js"></script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>
