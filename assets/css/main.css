@@ -317,10 +317,12 @@ h1 {
 }
 
 h2 {
+  margin-top: 1em;
   font-size: 1.75em;
 }
 
 h3 {
+  margin-top: 2em;
   font-size: 1.25em;
 }
 
