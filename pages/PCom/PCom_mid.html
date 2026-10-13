@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Physical Computing</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="../../PhysicalComputing.html" class="logo">
+                        <span class="back-link icon solid fa-arrow-left"> </span>
+                    </a>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>Birthday Music Box</h1>
+                    </header>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <a target="_blank" href=""></a><br>
+
+                            <p>↖ Learning resources ↗</p>
+                        </div>
+                        <div class="col-6">
+
+                            <p>↖ It may be useful in the future ↗</p>
+                        </div>
+                    </div>
+
+                    <!-- Parts -->
+                    <br>
+                    <h2>CONCEPT</h2>
+                    <div class="row">
+                        <div class="col-5">
+                            <p>
+                                <b>Rotary Encoder — Wind-up Mechanism</b><br>
+                                    The rotary encoder works like the winding key of a music box. 
+                                    Turning it builds up energy, which controls the music.
+                                    I plan to design it in the shape of a ribbon bow.<br>
+                            </p>
+                            <p>
+                                <b>Micro Limit Switch / Magnetic Switch — Lid Detection</b><br>
+                                    The switch detects whether the music box is open or closed and controls the LED.<br>
+
+                                    I'm considering two options:
+                                    <ul>
+                                        <li>Micro Limit Switch:<br>
+                                            Detects whether the lid is open or closed through physical contact. 
+                                            The lid presses the switch when it closes.<br>
+                                        </li>                                        
+                                        <li>Magnetic Switch :<br>
+                                            Uses a magnet to detect whether the lid is open or closed without physical contact. 
+                                        </li>
+                                    </ul>
+
+                            </p>
+                            <p>
+                                <b>LED — Candle Flame</b><br>
+                                The LED represents the flame of a birthday candle.<br>
+                            </p>
+                            <p>
+                                <b>Microphone / Photoelectric Sensor — Blow Detection</b><br>
+                                I'm currently exploring two ways to detect blowing:
+                                <ul>
+                                    <li>Microphone :<br> Detect the sound of someone blowing.<br></li>
+                                    <li>
+                                        Photoelectric Sensor :<br> Use a lightweight piece of material 
+                                        that moves when someone blows on it. The sensor detects this movement.<br>                                        
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                <b>Speaker / MP3 Module — Music Playback</b><br>
+                                The speaker and MP3 module play the Happy Birthday song.
+                            </p>
+                            <p>
+                                <b>Arduino — Main Controller</b><br>
+                                The Arduino will be hidden inside the base of the box to control all the components.
+                            </p>
+                        </div>
+                        <div class="col-6 col-12-small col-12-xsmall">
+                            <span class="image fit"><img
+                                src="../../images/PCom/mid/sketch.jpg" alt="mid_sketch" />sketch</span>
+                            <span class="image fit"><img style="border: 0.3px solid lightgray;"
+                                src="../../images/PCom/mid/parts.png" alt="mid_parts" />parts</span>
+                        </div>
+                    </div>
+
+                    <h2>TEST</h2>
+
+                    <h3>Micro Limit Switch / Magnetic Switch — Lid Detection</h3>
+                    <p></p>
+                    <div class="row">
+                        <pre class="col-5 col-small-12 col-xsmall-12"><code>
+    // set pin
+    const int switchPin = 4;
+    const int ledPin = 6;
+
+    void setup() {
+    Serial.begin(9600);
+
+    pinMode(switchPin, INPUT_PULLUP);
+    pinMode(ledPin, OUTPUT);
+    }
+
+    void loop() {
+    int switchState = digitalRead(switchPin);
+
+    //CLOSE BOX = PIN LOW
+    if( switchState == LOW){
+        digitalWrite(ledPin, HIGH);
+    } else{
+        digitalWrite(ledPin, LOW);
+    } 
+
+    delay(100);
+    }
+                        </code></pre>
+
+                        <div class="col-6">
+                            <iframe width="250" height="400" src="https://www.youtube.com/embed/AAhwbOFpC5s?si=AsvQaAAIysYA67tF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe width="250" height="400" src="https://www.youtube.com/embed/d_lCtJ_BiAU?si=ank9FL3bQoY9yn2d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <h3>Rotary Encoder — Wind-up Mechanism</h3>
+                    <p>Simulates winding up a music box to store energy.</p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12"><code>
+    // set pin
+    const int encoderPin1 = 2; //pin2 = gnd
+    const int encoderPin3 = 3;
+
+    // set power
+    int power = 0;
+    // let powerMax = 20;
+
+    int encoderPin1StateLast;
+
+    void setup() {
+    Serial.begin(9600);
+    //set pin
+    pinMode(encoderPin1, INPUT_PULLUP);
+    pinMode(encoderPin3, INPUT_PULLUP);
+    encoderPin1StateLast = digitalRead(encoderPin1);
+    }
+
+    void loop() {
+    // rotary?
+    int encoderPin1StateNow = digitalRead(encoderPin1);
+    int encoderPin3StateNow = digitalRead(encoderPin3);
+
+    if(encoderPin1StateNow != encoderPin1StateLast){
+        power++;
+    }
+
+    encoderPin1StateLast = encoderPin1StateNow;
+
+    Serial.print("Power: ");
+    Serial.println(power);
+
+    }
+                        </code></pre>
+
+                        <div class="col-5">
+                                <iframe width="452" height="804" src="https://www.youtube.com/embed/fFHiCDr3WBQ?si=RwpbbrnIIXE6lIS8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <h3>Blow Detection Test — Speaker as a Microphone</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <p>
+                            I tried using a small speaker to detect blowing, but it didn't work reliably.<br>
+                            The signal generated by the speaker was too weak for the Arduino to detect directly.<br>
+                            An amplifier would be needed to make the signal easier to read.
+                            </p>
+                        </div>
+                        <div class="col-3 col-12-small col-12-xsmall">
+                            <span class="image fit"><img
+                                src="../../images/PCom/mid/blow.png" alt="blow" /></span>
+                        </div>
+                    </div>
+                        
+
+
+                    <!-- <p>
+                        <code>CODE;</code>
+                    <ul>
+                        <li>
+
+                        </li>
+                        <li>
+
+                        </li>
+                    </ul>
+
+                    </p> -->
+
+
+                    <br>
+
+                    <h3>H3 TITLE</h3>
+                    <p>
+                        P
+                    </p>
+
+                </section>
+
+            </div>
+        </div>
+
+
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+
+    <script src="../../assets/js/sidebar.js"></script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>
