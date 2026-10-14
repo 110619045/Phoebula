@@ -61,7 +61,7 @@
         let rainY2;
 
         for(let i=1; i<=12; i++){
-            rainX1 = random( 30 + (i-1) * 35 , 50 + 35 * i );
+            rainX1 = random( 30 + (i-1) * 35 , 30 + 35 * i );
             rainY1 = random( 10 , 100);
             rainX2 = rainX1 + random( 10 , 40);
             rainY2 = random( 130 , 270 );
@@ -76,12 +76,10 @@
             let G = map(rainLength, 0, 250, 200, 0);
             let B = map(rainLength, 0, 250, 255, 200);
 
-            for( let I = 0; I < rainLength; I++){
-                stroke( R, G, B, 255-I);
-            }
-        
+            stroke( R, G, B);
+            
             line(rainX1, rainY1, rainX2, rainY2);
-        
+            
             if ( rainLength > 160 ) {
                 n = 5;
             } else if ( rainLength > 100 ) {
