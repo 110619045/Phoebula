@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Intro to Comp Media</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
+    <script src="../../sourse/ICM/sketch.js"></script>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="../../ICM.html" class="logo">
+                        <span class="back-link icon solid fa-arrow-left"> </span>
+                    </a>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>TITLE</h1>
+                    </header>
+
+                    <div>
+                        <span>October 5, 2026 </span><br>
+                        <a target="_blank" href="https://creative-coding.decontextualize.com/arrays-and-objects/">Arrays
+                            and objects</a>
+                        <a target="_blank"
+                            href="https://creative-coding.decontextualize.com/objects-with-methods/">Objects with
+                            methods</a>
+                        <a target="_blank" href="https://creative-coding.decontextualize.com/object-factories/">Object
+                            and factories</a>
+
+                    </div>
+
+                    <br><br>
+                    <h2></h2>
+                    <p>
+
+                    </p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12" style="max-height: 55vh; overflow-y: scroll;"><code>
+
+                        </code></pre>
+                        <div class="col-5 col-12-xsmall col-12-small">
+                            <span class="image fit"><img style="border: 0.3px solid black;" src="../../images/ICM/week"
+                                    alt="flysGame" /></span>
+                            <a href="https://editor.p5js.org/0304phoebe/sketches/dwhdRFjPh">Run the code in p5.js</a>
+                        </div>
+                    </div>
+
+
+                    <h3>畫草圖</h3>
+                    <p>
+                        用線段畫出蒲公英草圖>利用FOR LOOP 跟COS SIN
+                    </p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12"><code>
+    function setup() {
+        createCanvas(400, 400);
+        noLoop();
+    }
+
+    function draw() {
+        background(220);
+
+        let x = 200;
+        let y = 200;
+        let r = 30;
+        let n = 18;
+
+        stroke(255);
+        for(let i=0; i < n ; i++) {
+            line(x, y, x + r * cos(TWO_PI / n * i), y + r * sin(TWO_PI / n * i));
+            console.log(i);
+        }
+    }
+                        </code></pre>
+
+                        <div class="col-5 col-12-xsmall col-12-small">
+                            <span class="image fit"><img style="border: 0.3px solid black;"
+                                    src="../../images/ICM/week05/05_1.png" alt="dandelion" /></span>
+                        </div>
+                    </div>
+
+                    <h3>用滑鼠點擊生成蒲公嬰</h3>
+                    <p>
+                        TEXT
+                    </p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12"><code>
+    function draw() {
+        background(220);
+    }
+
+    function mouseClicked(){
+        x = mouseX;
+        y = mouseY;
+        r = random(20,80);
+        n = floor(random(12, 21))
+
+        stroke(255);
+        for(let i=0; i < n; i++){
+            line(x, y, x + r * cos(TWO_PI / n * i), y + r * sin(TWO_PI / n * i));
+            console.log(i);
+        }
+    }
+                        </code></pre>
+                        <div class="col-5 col-12-xsmall col-12-small">
+                            <span class="image fit"><img style="border: 0.3px solid black;"
+                                    src="../../images/ICM/week05/05_2.png" alt="dandelion" /></span>
+                        </div>
+                    </div>
+
+                    <h3>陣列儲存</h3>
+                    <p>
+                        用陣列存資料，用push儲存新資料
+                    </p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12"><code>
+    let x = [];
+    let y = [];
+    let r = [];
+    let n = [];
+    let hasClicked = false;
+    ...
+
+    function draw() {
+        background(220);
+
+        if (hasClicked) {
+            stroke(255);
+            for(let j=0; j < x.length; j++){
+                for(let i=0; i < n[j] ; i++){
+                    line(x[j], y[j], x[j] + r[j] * cos(TWO_PI / n[j] * i), y[j] + r[j] * sin(TWO_PI / n[j] * i));
+                    console.log(i);
+                }
+            }
+        }
+    }
+
+    function mousePressed(){
+        hasClicked = true;
+        x.push(mouseX);
+        y.push(mouseY);
+        r.push(random(20,80));
+        n.push(floor(random(12, 21)));
+    }
+               </code></pre>
+                        <div class="col-5 col-12-xsmall col-12-small">
+                            <span class="image fit"><img style="border: 0.3px solid black;"
+                                    src="../../images/ICM/week05/05_3.png" alt="dandelion" /></span>
+                        </div>
+                    </div>
+
+                    <h3>樸工因飛起來</h3>
+                    <p>
+                        用貝茲曲線畫蒲公英的莖，
+                    </p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12"><code>
+    let root = [];
+    ...
+    
+    function draw() {
+        background(220);
+
+        if (hasClicked) {
+            ...
+            for(let j=0; j < x.length; j++){
+            for(let i=0; i < n[j] ; i++){
+                ...
+                bezier(x[j], y[j],
+                        x[j], y[j] + r[j] * 0.6,
+                        x[j] + root[j] * 0.5, y[j] + r[j] * 1.4,
+                        x[j] + root[j], y[j] + r[j] * 1.8
+                    )
+                y[j] -= 0.05;
+            }
+            }
+        }
+    }
+
+    function mousePressed(){
+        ...
+        root.push(random(-20,20));
+    }
+               </code></pre>
+                        <div class="col-5 col-12-xsmall col-12-small">
+                            <span class="image fit"><img style="border: 0.3px solid black;"
+                                    src="../../images/ICM/week05/05_4.png" alt="dandelion" /></span>
+                        </div>
+                    </div>
+
+                    <h3>H3 TITLE</h3>
+                    <p>
+                        刪除陣列資料，用splice。
+                    </p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12"><code>
+    ...
+
+    function draw() {
+        ...
+        if (hasClicked) {
+                ...
+                for(let j=0; j < x.length; j++){
+                    for(let i=0; i < n[j] ; i++){
+                        ...
+                        if((y[j] + r[j] * 1.8) < 0){
+                        x.splice(j, 1);
+                        y.splice(j, 1);
+                        r.splice(j, 1);
+                        n.splice(j, 1);
+                        root.splice(j, 1);
+                    }
+                }
+            }
+        }
+    }
+
+    function mousePressed(){
+    ...
+    }
+               </code></pre>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+
+    <script src="../../assets/js/sidebar.js"></script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

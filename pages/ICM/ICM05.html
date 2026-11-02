@@ -1,0 +1,407 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Intro to Comp Media</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
+    <script src="../../sourse/ICM/sketch.js"></script>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="../../ICM.html" class="logo">
+                        <span class="back-link icon solid fa-arrow-left"> </span>
+                    </a>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>TITLE</h1>
+                    </header>
+
+                    <div>
+                        <span>October 5, 2026 </span><br>
+                        <a target="_blank" href="">class...</a>
+                    </div>
+
+                    <br><br>
+                    <h2>SUB TITLE</h2>
+                    <p>
+                        
+                    </p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12" style="max-height: 55vh; overflow-y: scroll;"><code>
+CODE
+                        </code></pre>
+                        <div class="col-5 col-12-xsmall col-12-small">
+                            <span class="image fit"><img style="border: 0.3px solid black;"
+                                    src="../../images/ICM/week" alt="flysGame" /></span>
+                            <a href="">Run the code in p5.js</a>
+                        </div>
+                    </div>
+
+
+                    <h3>H3 TITLE</h3>
+                    <p>
+                        TEXT
+                    </p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12"><code>
+    ///////
+                        </code></pre>
+
+                        <div class="col-5 col-12-xsmall col-12-small">
+                            <span class="image fit"><img style="border: 0.3px solid black;"
+                                src="../../images/ICM/week04/step2.png" alt="raining" /></span>
+                        </div>
+                    </div>
+
+                    <h3>畫ETRabbit</h3>
+                    <p>
+                        把ETRabbit變成funtion畫
+                    </p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12"><code>
+    function setup() {
+        createCanvas(400, 400);
+        frameRate(6);
+    }
+
+    function draw() {
+        ...
+
+        rabbit();
+    }
+
+    function rabbit(){
+        let X = 100;
+        let Y = 200;
+  
+        // body
+        strokeWeight(0);
+        fill(0, 230, 0);
+        ellipse(X, Y, 75, 55);
+        // 1
+        rect(X-25, Y+18, 5, 10, 10);
+        // 2
+        rect(X-15, Y+22, 5, 10, 10);
+        // 3
+        rect(X+20, Y+18, 5, 10, 10);
+        // 4
+        rect(X+28, Y+12, 5, 12, 10);
+
+        circle(X+37,Y-11,10);
+        ellipse(X-15, Y-50, 30, 50);
+        strokeWeight(3);
+        line(X-15, Y-75, X-16, Y-45);
+
+        // face
+        fill(0, 250, 0);
+        strokeWeight(0);
+        ellipse(X-15, Y-25, 60, 50);
+        
+        circle(X-35,Y-55,7);
+        circle(X+5,Y-55,7);
+        strokeWeight(2);
+        stroke(0,255,0);
+        line(X-35, Y-55, X-30, Y-35);
+        line(X+5, Y-55, X, Y-35);
+            
+        fill(0, 0, 0);
+        strokeWeight(0);
+        circle(X-35,Y-25,7);
+        circle(X-5,Y-25,7);
+
+        // eyes
+        fill(250,250,250);
+        circle(X-36,Y-25,2);
+        circle(X-35,Y-26,2);
+        circle(X-34,Y-24,1.5);
+        circle(X-6,Y-25,2);
+        circle(X-5,Y-26,2);
+        circle(X-4,Y-24,1.5);
+        
+        // mouth
+        fill(0, 0, 0);
+        ellipse(X-20, Y-22, 4, 3);
+        strokeWeight(2);
+        stroke(0,0,0);
+        noFill();
+        arc(X-22, Y-20, 4, 5, 0, HALF_PI);
+        arc(X-18, Y-20, 4, 5, HALF_PI, PI);
+    }
+                        </code></pre>
+
+                        <div class="col-5 col-12-xsmall col-12-small">
+                            <span class="image fit"><img style="border: 0.3px solid black;"
+                                src="../../images/ICM/week05/05_01.png" alt="raining" /></span>
+                        </div>
+                    </div>
+
+                    <h3>兔子移動</h3>
+                    <p>
+                        讓兔子跟著滑鼠移動
+                    </p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12"><code>
+function setup() {
+    ...
+}
+
+function draw() {
+  background(0);
+  
+  for(let i=5;i<400;i+=6){
+      for(let j=5;j<400;j+=6){
+      strokeWeight(0);
+      let r = random(200);
+      let g = random(200);
+      let b = 200;
+          fill(r, g, b);
+          circle(i,j,5);
+      }
+  }
+
+  let X = constrain(mouseX, 50, 350);
+  let Y = constrain(mouseY, 85, 360);
+  rabbit(X,Y);
+}
+
+function rabbit(X,Y){
+// body
+  strokeWeight(0);
+  fill(0, 230, 0);
+  ellipse(X, Y, 75, 55);
+// 1
+  rect(X-25, Y+18, 5, 10, 10);
+// 2
+  rect(X-15, Y+22, 5, 10, 10);
+// 3
+  rect(X+20, Y+18, 5, 10, 10);
+// 4
+  rect(X+28, Y+12, 5, 12, 10);
+
+  circle(X+37,Y-11,10);
+  ellipse(X-15, Y-50, 30, 50);
+  strokeWeight(3);
+  line(X-15, Y-75, X-16, Y-45);
+
+// face
+  fill(0, 250, 0);
+  strokeWeight(0);
+  ellipse(X-15, Y-25, 60, 50);
+  
+  circle(X-35,Y-55,7);
+  circle(X+5,Y-55,7);
+  strokeWeight(2);
+  stroke(0,255,0);
+  line(X-35, Y-55, X-30, Y-35);
+  line(X+5, Y-55, X, Y-35);
+    
+  fill(0, 0, 0);
+  strokeWeight(0);
+  circle(X-35,Y-25,7);
+  circle(X-5,Y-25,7);
+
+// eyes
+  fill(250,250,250);
+  circle(X-36,Y-25,2);
+  circle(X-35,Y-26,2);
+  circle(X-34,Y-24,1.5);
+  circle(X-6,Y-25,2);
+  circle(X-5,Y-26,2);
+  circle(X-4,Y-24,1.5);
+  
+// mouth
+  fill(0, 0, 0);
+  ellipse(X-20, Y-22, 4, 3);
+  strokeWeight(2);
+  stroke(0,0,0);
+  noFill();
+  arc(X-22, Y-20, 4, 5, 0, HALF_PI);
+  arc(X-18, Y-20, 4, 5, HALF_PI, PI);
+}
+                        </code></pre>
+
+                        <div class="col-5 col-12-xsmall col-12-small">
+                            <span class="image fit"><img style="border: 0.3px solid black;"
+                                src="../../images/ICM/week05/05_02.png" alt="raining" /></span>
+                        </div>
+                    </div>
+
+                    <h3>加上背景</h3>
+                    <p>
+                        用push amd pop畫上背景速度線
+                    </p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12"><code>
+function setup() {
+  createCanvas(400, 400);
+  frameRate(6);
+}
+
+function draw() {
+  background(0);
+  
+  for(let i=5;i < 400; i += 6){
+      for( let j=5;j < 400;j+=6){
+      strokeWeight(0);
+      let r = random(200);
+      let g = random(200);
+      let b = 200;
+          fill(r, g, b);
+          circle(i,j,5);
+      }
+  }
+
+  let X = constrain(mouseX, 55, 350);
+  let Y = constrain(mouseY, 85, 360);
+  
+  push();
+  fill(255,255,255,200);
+  let lazerX = 200;
+  let lazerY = 200;
+  let n = 20;
+  translate(lazerX,lazerX);
+
+  for(let i = 0; i < n; i++){
+    rotate(TWO_PI / n);
+    triangle(0, 0, -30, -lazerX-100, 30, -lazerY-100);
+  }
+
+  pop();
+  
+  rabbit(X,Y);
+}
+
+function rabbit(X,Y){
+// body
+  strokeWeight(0);
+  fill(0, 230, 0);
+  ellipse(X, Y, 75, 55);
+// 1
+  rect(X-25, Y+18, 5, 10, 10);
+// 2
+  rect(X-15, Y+22, 5, 10, 10);
+// 3
+  rect(X+20, Y+18, 5, 10, 10);
+// 4
+  rect(X+28, Y+12, 5, 12, 10);
+
+  circle(X+37,Y-11,10);
+  ellipse(X-15, Y-50, 30, 50);
+  strokeWeight(3);
+  line(X-15, Y-75, X-16, Y-45);
+
+// face
+  fill(0, 250, 0);
+  strokeWeight(0);
+  ellipse(X-15, Y-25, 60, 50);
+  
+  circle(X-35,Y-55,7);
+  circle(X+5,Y-55,7);
+  strokeWeight(2);
+  stroke(0,255,0);
+  line(X-35, Y-55, X-30, Y-35);
+  line(X+5, Y-55, X, Y-35);
+    
+  fill(0, 0, 0);
+  strokeWeight(0);
+  circle(X-35,Y-25,7);
+  circle(X-5,Y-25,7);
+
+// eyes
+  fill(250,250,250);
+  circle(X-36,Y-25,2);
+  circle(X-35,Y-26,2);
+  circle(X-34,Y-24,1.5);
+  circle(X-6,Y-25,2);
+  circle(X-5,Y-26,2);
+  circle(X-4,Y-24,1.5);
+  
+// mouth
+  fill(0, 0, 0);
+  ellipse(X-20, Y-22, 4, 3);
+  strokeWeight(2);
+  stroke(0,0,0);
+  noFill();
+  arc(X-22, Y-20, 4, 5, 0, HALF_PI);
+  arc(X-18, Y-20, 4, 5, HALF_PI, PI);
+}
+                        </code></pre>
+
+                        <div class="col-5 col-12-xsmall col-12-small">
+                            <span class="image fit"><img style="border: 0.3px solid black;"
+                                src="../../images/ICM/week05/05_03.png" alt="raining" /></span>
+                        </div>
+                    </div>
+
+                    <h3>H3 TITLE</h3>
+                    <p>
+                        TEXT
+                    </p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12"><code>
+    ///////
+                        </code></pre>
+
+                        <div class="col-5 col-12-xsmall col-12-small">
+                            <span class="image fit"><img style="border: 0.3px solid black;"
+                                src="../../images/ICM/week04/step2.png" alt="raining" /></span>
+                        </div>
+                    </div>
+
+                    <h3>H3 TITLE</h3>
+                    <p>
+                        TEXT
+                    </p>
+                    <div class="row">
+                        <pre class="col-6 col-small-12 col-xsmall-12"><code>
+    ///////
+                        </code></pre>
+
+                        <div class="col-5 col-12-xsmall col-12-small">
+                            <span class="image fit"><img style="border: 0.3px solid black;"
+                                src="../../images/ICM/week04/step2.png" alt="raining" /></span>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+
+    <script src="../../assets/js/sidebar.js"></script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>
